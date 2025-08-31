@@ -1,0 +1,130 @@
+.menu {
+  position: relative;
+  font-family: system-ui, sans-serif;
+}
+
+/* ============ Десктоп ============ */
+.menu__list {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu__item {
+  list-style: none;
+}
+
+.menu__link {
+  text-decoration: none;
+  font-size: 16px;
+  color: #222;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.menu__link:hover {
+  color: #0d6efd; /* синий при наведении */
+}
+
+.menu__linkActive {
+  font-weight: 600;
+  color: #0d6efd;
+}
+
+.menu__linkActive::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+}
+
+/* ============ Бургер (мобилка) ============ */
+.iconMenu {
+  display: none;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .iconMenu {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    z-index: 1001;
+  }
+
+  .iconMenu span,
+  .iconMenu::before,
+  .iconMenu::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    height: 2px;
+    width: 100%;
+    background: #000;
+    transition: 0.3s;
+  }
+
+  .iconMenu::before {
+    top: 0;
+  }
+  .iconMenu::after {
+    bottom: 0;
+  }
+  .iconMenu span {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* Анимация крестика */
+  .iconMenu_open span {
+    opacity: 0;
+  }
+  .iconMenu_open::before {
+    transform: rotate(45deg);
+    top: 50%;
+  }
+  .iconMenu_open::after {
+    transform: rotate(-45deg);
+    bottom: 50%;
+  }
+
+  /* Панель */
+  .menu__body {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    max-width: 280px;
+    height: 100vh;
+    background: #fff;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
+    padding: 80px 20px 20px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+  }
+
+  .menu__body[data-open="true"] {
+    right: 0;
+  }
+
+  .menu__list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .menu__link {
+    font-size: 18px;
+    color: #222;
+  }
+}

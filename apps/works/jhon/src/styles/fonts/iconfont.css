@@ -1,0 +1,20 @@
+@font-face { 
+	font-family: "iconfont"; 
+	font-display: swap;
+	src: url("/home/viacheslavbocharov/projects/portfolio/apps/works/jhon/src/assets/svgicons/preview/iconfont.woff2?1787aadcba5d7c42654c6a77c297a40e") format("woff2"); 
+} 
+[class*="--icon-"]::before{
+	font-family: iconfont; 
+}
+	[class*="--icon-twitter"]::before { 
+		content: "\f101"; 
+	} 
+	[class*="--icon-linkedin"]::before { 
+		content: "\f102"; 
+	} 
+	[class*="--icon-insta"]::before { 
+		content: "\f103"; 
+	} 
+	[class*="--icon-fb"]::before { 
+		content: "\f104"; 
+	} 
