@@ -1,0 +1,22 @@
+@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap');
+
+@theme {
+  --font-heebo: 'Heebo', sans-serif;
+
+  --color-dark: #21243D;
+  --color-accent: #FF6464;
+  --color-bg: #EDF7FA;
+  --color-muted: #8695A4;
+
+
+}
+
+
+@layer components {
+  .text-page-title { @apply text-lg md:text-[44px] font-bold leading-tight text-dark; }
+  .text-block-title { @apply text-lg md:text-[22px] font-bold text-dark; }
+  .text-item-title { @apply text-[22px] md:text-3xl font-bold text-dark; }
+  .text-main { @apply text-base leading-7 font-normal text-dark; }
+  .text-muted { @apply text-xl font-normal text-muted }
+}
