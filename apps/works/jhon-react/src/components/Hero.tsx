@@ -20,7 +20,7 @@ export default function Hero() {
             sint. Velit officia consequat duis enim velit mollit. Exercitation
             veniam consequat sunt nostrud amet.
           </p>
-          <button className="bg-[var(--color-accent)] px-5 py-2.5 rounded-xs text-xl text-white font-medium mx-auto sm:mx-0 block sm:inline-block">
+          <button className="bg-[var(--color-accent)] px-5 py-2.5 rounded-xs text-xl text-white font-medium mx-auto sm:mx-0 block sm:inline-block cursor-pointer">
             Download Resume
           </button>
         </div>
