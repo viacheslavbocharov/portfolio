@@ -4,15 +4,27 @@ import { useState, useEffect } from 'react';
 export default function Header() {
   const [open, setOpen] = useState(false);
 
-    useEffect(() => {
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false);
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
   }, []);
 
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [open]);
+
   return (
-    <header className="w-full mb-20">
-      <div className="max-w-[1042px] mx-auto px-2.5 py-7 flex justify-end-safe">
+    <header className="w-full mb-6 sm:mb-20">
+      <div className="max-w-[1042px] mx-auto p-5 sm:p-7 flex justify-end-safe">
         <div
           className={`${
             open ? 'left-0' : '-left-full'
@@ -20,10 +32,26 @@ export default function Header() {
         >
           <nav className="h-screen w-3xs sm:w-auto sm:h-auto bg-white">
             <ul className="flex flex-col sm:flex-row gap-8 text-xl font-medium p-8 sm:p-0">
-              <li><NavLink to="/" onClick={() => setOpen(false)}>Home</NavLink></li>
-              <li><NavLink to="/works" onClick={() => setOpen(false)}>Works</NavLink></li>
-              <li><NavLink to="/blog" onClick={() => setOpen(false)}>Blog</NavLink></li>
-              <li><NavLink to="/contacts" onClick={() => setOpen(false)}>Contacts</NavLink></li>
+              <li>
+                <NavLink to="/" onClick={() => setOpen(false)}>
+                  Home
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/works" onClick={() => setOpen(false)}>
+                  Works
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/blog" onClick={() => setOpen(false)}>
+                  Blog
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/contacts" onClick={() => setOpen(false)}>
+                  Contacts
+                </NavLink>
+              </li>
             </ul>
           </nav>
 
