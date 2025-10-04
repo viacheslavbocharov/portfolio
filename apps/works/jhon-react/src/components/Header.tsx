@@ -47,11 +47,11 @@ export default function Header() {
                   Blog
                 </NavLink>
               </li>
-              <li className='hover:text-accent'>
+              {/* <li className='hover:text-accent'>
                 <NavLink to="/contacts" onClick={() => setOpen(false)}>
                   Contacts
                 </NavLink>
-              </li>
+              </li> */}
             </ul>
           </nav>
 
