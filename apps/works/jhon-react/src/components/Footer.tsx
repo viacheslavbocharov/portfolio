@@ -1,8 +1,8 @@
-import Container from './Container';
-import fb from '../assets/img/icon/fb.svg';
-import insta from '../assets/img/icon/insta.svg';
-import linkedin from '../assets/img/icon/linkedin.svg';
-import twitter from '../assets/img/icon/twitter.svg';
+import Container from '@/components/Container';
+import fb from '@/assets/img/icon/fb.svg';
+import insta from '@/assets/img/icon/insta.svg';
+import linkedin from '@/assets/img/icon/linkedin.svg';
+import twitter from '@/assets/img/icon/twitter.svg';
 
 export default function Footer() {
   return (

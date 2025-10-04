@@ -1,6 +1,6 @@
-import type { Post } from '../types/post';
-import Container from './Container';
-import PostCard from './PostCard';
+import type { Post } from '@/types/post';
+import Container from '@/components/Container';
+import PostCard from '@/components/PostCard';
 
 export default function RecentPosts({ posts }: { posts: Post[] }) {
   return (

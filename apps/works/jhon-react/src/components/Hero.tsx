@@ -1,5 +1,5 @@
-import Container from './Container';
-import jhon from '../assets/img/photo.png';
+import Container from '@/components/Container';
+import jhon from '@/assets/img/photo.png';
 
 export default function Hero() {
   return (
