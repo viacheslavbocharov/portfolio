@@ -23,7 +23,7 @@ export default function Header() {
   }, [open]);
 
   return (
-    <header className="w-full mb-6 sm:mb-20">
+    <header className="w-full mb-6 sm:mb-20 ">
       <div className="max-w-[1042px] mx-auto p-5 sm:p-7 flex justify-end-safe">
         <div
           className={`${
@@ -31,23 +31,23 @@ export default function Header() {
           } absolute top-0 sm:static flex w-full sm:w-auto transition-all duration-300`}
         >
           <nav className="h-screen w-3xs sm:w-auto sm:h-auto bg-white">
-            <ul className="flex flex-col sm:flex-row gap-8 text-xl font-medium p-8 sm:p-0">
-              <li>
+            <ul className="flex flex-col sm:flex-row gap-8 text-xl font-medium p-8 sm:p-0 transition-all duration-300">
+              <li className='hover:text-accent'>
                 <NavLink to="/" onClick={() => setOpen(false)}>
                   Home
                 </NavLink>
               </li>
-              <li>
+              <li className='hover:text-accent'>
                 <NavLink to="/works" onClick={() => setOpen(false)}>
                   Works
                 </NavLink>
               </li>
-              <li>
+              <li className='hover:text-accent'>
                 <NavLink to="/blog" onClick={() => setOpen(false)}>
                   Blog
                 </NavLink>
               </li>
-              <li>
+              <li className='hover:text-accent'>
                 <NavLink to="/contacts" onClick={() => setOpen(false)}>
                   Contacts
                 </NavLink>

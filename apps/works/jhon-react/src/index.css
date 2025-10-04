@@ -15,10 +15,10 @@
     @apply text-3xl sm:text-4xl md:text-[44px] font-bold leading-tight text-dark;
   }
   .text-block-title {
-    @apply text-lg md:text-[22px] font-bold text-dark;
+    @apply text-lg md:text-[22px] font-normal text-dark;
   }
   .text-item-title {
-    @apply text-[22px] md:text-3xl font-bold text-dark;
+    @apply text-[22px] md:text-[26px] font-bold text-dark;
   }
   .text-main {
     @apply text-base leading-7 font-normal text-dark;
