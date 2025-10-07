@@ -1,7 +1,10 @@
 import Container from '@/components/Container';
+import { useDocumentTitle } from '@/hooks/useDocumentTitle';
 import { Link } from 'react-router-dom';
 
 export default function NotFound() {
+    useDocumentTitle('404 - Page not found');
+
   return (
     <Container>
       <div className="min-h-dvh flex flex-col items-center justify-center text-center p-8">

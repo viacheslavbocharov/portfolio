@@ -2,15 +2,23 @@ import type { Work } from '@/types/work';
 import { useParams } from 'react-router-dom';
 import { worksMock } from '@/mocks/works';
 import Container from '@/components/Container';
+import { useDocumentTitle } from '@/hooks/useDocumentTitle';
 
 export default function WorkDetails() {
   const { slug } = useParams();
   const work = worksMock.find((w: Work) => w.slug === slug);
+  const readableTitle = slug
+    ? slug
+        .split('-')
+        .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+        .join(' ')
+    : 'No such work';
+
+  useDocumentTitle(readableTitle);
 
   if (!work) {
     return <div>Work not found</div>;
   }
-
   return (
     <Container>
       <article className=" pb-10 md:pb-20">
