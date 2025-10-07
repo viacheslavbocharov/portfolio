@@ -31,27 +31,53 @@ export default function Header() {
           } absolute top-0 sm:static flex w-full sm:w-auto transition-all duration-300`}
         >
           <nav className="h-screen w-3xs sm:w-auto sm:h-auto bg-white">
-            <ul className="flex flex-col sm:flex-row gap-8 text-xl font-medium p-8 sm:p-0 transition-all duration-300">
-              <li className='hover:text-accent'>
-                <NavLink to="/" onClick={() => setOpen(false)}>
+            <ul className="flex flex-col sm:flex-row gap-8 text-xl font-medium p-8 sm:p-0">
+              <li>
+                <NavLink
+                  to="/"
+                  end
+                  onClick={() => setOpen(false)}
+                  className={({ isActive }) =>
+                    `transition-all duration-300 ${
+                      isActive
+                        ? 'text-accent'
+                        : 'hover:text-accent hover:underline hover:underline-offset-4'
+                    }`
+                  }
+                >
                   Home
                 </NavLink>
               </li>
-              <li className='hover:text-accent'>
-                <NavLink to="/works" onClick={() => setOpen(false)}>
+              <li>
+                <NavLink
+                  to="/works"
+                  onClick={() => setOpen(false)}
+                  className={({ isActive }) =>
+                    `transition-all duration-300 ${
+                      isActive
+                        ? 'text-accent'
+                        : 'hover:text-accent hover:underline hover:underline-offset-4'
+                    }`
+                  }
+                >
                   Works
                 </NavLink>
               </li>
-              <li className='hover:text-accent'>
-                <NavLink to="/blog" onClick={() => setOpen(false)}>
+              <li>
+                <NavLink
+                  to="/blog"
+                  onClick={() => setOpen(false)}
+                  className={({ isActive }) =>
+                    `transition-all duration-300 ${
+                      isActive
+                        ? 'text-accent'
+                        : 'hover:text-accent hover:underline hover:underline-offset-4'
+                    }`
+                  }
+                >
                   Blog
                 </NavLink>
               </li>
-              {/* <li className='hover:text-accent'>
-                <NavLink to="/contacts" onClick={() => setOpen(false)}>
-                  Contacts
-                </NavLink>
-              </li> */}
             </ul>
           </nav>
 

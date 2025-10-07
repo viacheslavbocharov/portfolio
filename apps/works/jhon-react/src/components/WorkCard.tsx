@@ -1,4 +1,5 @@
 import type { Work } from '@/types/work';
+import { Link } from 'react-router-dom';
 
 export default function WorkCard({ work }: { work: Work }) {
   return (
@@ -9,9 +10,12 @@ export default function WorkCard({ work }: { work: Work }) {
         className="w-full h-auto rounded-sm object-cover shrink-0 sm:w-[246px] sm:h-[180px]"
       />
       <div className="flex-1 min-w-0">
-        <a className="inline-block text-item-title mb-3.5 md:mb-6" href="/">
+        <Link
+          className="inline-block text-item-title mb-3.5 md:mb-6"
+          to={`/works/${work.slug}`}
+        >
           {work.title}
-        </a>
+        </Link>
 
         <div className="flex items-center gap-7 mb-3.5 md:mb-6">
           <span className="font-black text-white bg-[#142850] inline-flex items-center justify-center px-3 py-0.5 rounded-full">
